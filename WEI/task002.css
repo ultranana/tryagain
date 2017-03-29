@@ -1,0 +1,146 @@
+body,p,form,h1,h2,h3,h4,h5,h6,figure{
+	margin: 0;
+}
+body {
+	background: #e3e3e3;
+}
+ul,ol,li {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after{
+	display: block;
+	content: "";
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+/*header 样式*/
+header {
+	height: 60px;
+	background: #666;
+	overflow: hidden;
+}
+header .logo {
+	display: inline-block;
+	width: 135px;
+	height: 42px;
+	margin: 12px 0 0 40px;
+}
+header .nav {
+	float: right;
+	margin: 20px 20px 0 0;
+}
+header .nav li {
+	float: right;
+	margin-left: 20px;
+}
+header .nav li a:link{
+	color: #fff;
+	text-decoration: none;
+}
+/*主体*/
+.main-body {	
+	width: 900px;
+	margin: 20px auto 20px auto;
+	line-height: 2em;
+}
+
+.main-body .main-body-item {
+	background: #fff;
+	border: 1px solid #cbcbcb;
+	box-shadow: 1px 1px 2px #888888;
+	width: 100%;
+	padding:40px 20px 40px 20px;
+	margin-top: 20px;
+}
+.main-body-item h3,.main-body-item .author {
+	color: #cbcbcb;
+}
+.main-body-item p {
+	text-indent: 2em;
+}
+.main-body-item img {
+	width: 200px;
+	height: 200px;
+}
+.main-body-item ul {
+	list-style: none;
+	text-indent: 20px;
+}
+.main-body-item .pictures {
+	margin-left: 20px;
+}
+.main-body-item .pictures figure {
+	width: 150px;
+	
+	border: 1px solid #cdcdcd;
+	margin-top: 20px;
+	padding: 10px;
+}
+.main-body-item .pictures figure img {
+	width: 150px;
+	height: 150px;
+}
+.main-body-item ol,.main-body-item .ps {
+	font-weight: bold;
+}
+.main-body-item ol {
+	margin-left: 40px;
+}
+.main-body-item table {
+	padding: 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+.main-body-item table th,.main-body-item table td {
+	
+	text-align: left;
+	border: 1px solid #cdcdcd;
+
+}
+.main-body-item table th {
+	color: #fff;
+	background: #00041f;
+}
+.main-body-item table .total {
+	background: #cdcdcd;
+	font-weight: bold;
+} 
+/*侧栏样式*/
+aside .aside-title {
+	border-left: 2px solid #cdcdcd;
+	padding-left: 20px;
+}
+aside form {
+	width: 100%;
+}
+.main-body-item form table th,.main-body-item form table td {
+	border: none;
+}
+aside form .col-1 {
+	vertical-align: top;
+	text-align: right;
+}
+aside form .warning {
+	color: #cdcdcd;
+}
+aside form textarea {
+	margin-top: 8px;
+}
+aside form .submit {
+	width: 100%;
+	border: none;
+	background: #0d1bd1;
+	line-height: 2em;
+	border-radius: 5px;
+	color: #fff;
+}
+/*脚栏*/
+footer {
+	background: #000;
+	text-align: center;
+	padding-top: 20px;
+	height: 60px;
+	color: #fff;
+}
