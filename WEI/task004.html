@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>垂直居中布局</title>
+	<style type="text/css">
+		body {
+			
+			margin: 0;
+			padding: 0;
+		}
+		.contain {
+			background: #ccc;
+			width: 400px;
+			height: 200px;
+			position: absolute;
+			/*
+			position: fixed;
+
+			relative相对于自身偏移。
+			absolute相对于已经定位的父元素偏移，如果父元素都未定位，则相对于html偏移。
+      fixed相对浏览器窗口进行定位。
+			
+			position:relative;
+			*/
+			left: 50%;
+			top: 50%;
+			/*margin-left: -200px;
+			margin-top: -100px;*/
+			transform: translate(-50%, -50%); 
+			/*translate偏移的百分比值是相对于自身大小的，在宽高变化时也能实现*/
+		}
+		/*.contain {
+			background: #eee;
+			width: 400px;
+			height: 200px;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		也可以用margin-auto实现
+		*/
+
+		.contain .cir-left,.contain .cir-right{
+			position: absolute;
+			/*
+			position: fixed;
+			position: relative;
+			*/
+			width: 50px;
+			height: 50px;
+			background: #fc0;
+		}
+
+		.contain .cir-left {
+			border-radius: 0 0 50px;
+			left: 0;
+			/*
+			left: 50%;
+
+			absolute,relative：向右偏移父元素宽度的50%
+			fixed:  向右偏移浏览器宽度的50%*/
+			top: 0;
+		}
+		.contain .cir-right {
+			border-radius: 50px 0 0;
+			right: 0;
+			bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="contain">
+		<div class="cir-left">
+		</div>
+		<div class="cir-right">
+		</div>
+	</div>
+	<!--<img src="http://pic.58pic.com/58pic/16/79/02/85E58PICHPa_1024.jpg">-->
+</body>
+</html>
