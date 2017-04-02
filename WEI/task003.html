@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>三栏布局</title>
+	<style type="text/css">
+		body,p,ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		.clearfix:after{
+			display: block;
+			visibility: hidden;
+			height: 0;
+			content: "";
+			clear: both;
+		}
+		.contain {
+			background: #eee;
+			padding: 20px;
+			border: 1px solid #999;
+		}
+		.team {
+			box-sizing:border-box;
+			padding: 20px;
+			background: #fff;
+			width: 200px;
+			float: left;
+		}
+		.team a {
+			display: block;
+			width: 80px;
+			height: 80px;
+			float: left;
+		}
+		.team a img {
+			width: 80px;
+			height: 80px;
+		}
+		.main {
+			padding: 20px;
+			margin-left: 220px;
+			margin-right: 140px;
+			background: #fff;
+			border: 1px solid #999;
+		}
+		.logos {
+			box-sizing:border-box;
+			width: 120px;
+			background: #fff;
+			float: right;
+			padding: 20px;
+
+		}
+		.logos .ul {
+			margin-bottom: -20px;
+		}
+		.logos .logo-item {
+			width: 80px;
+			height: 80px;
+			margin-bottom: 20px;
+		}
+		.logos .logo-item img {
+			width: 80px;
+			height: 80px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="contain clearfix">
+		<div class="team">
+			<a href="#"><img src="http://pic.58pic.com/58pic/16/79/02/85E58PICHPa_1024.jpg"></a>
+			<div class="tname">团队名称</div>
+		</div>
+		<div class="logos">
+			<div class="ul">
+			<div class="logo-item"><img src="http://pic.58pic.com/58pic/16/79/02/85E58PICHPa_1024.jpg"></div>
+			<div class="logo-item"><img src="http://pic.58pic.com/58pic/16/79/02/85E58PICHPa_1024.jpg"></div>
+			<div class="logo-item"><img src="http://pic.58pic.com/58pic/16/79/02/85E58PICHPa_1024.jpg"></div>
+			<div class="logo-item"><img src="http://pic.58pic.com/58pic/16/79/02/85E58PICHPa_1024.jpg"></div>
+			</div>
+		</div>
+		<div class="main">
+		关于你们团队的介绍
+		我来自北京林业大学信息学院，2013届计算机科学与技术（数字媒体技术方向）大四在读。成为前端工程师是我现在最强烈的愿望之一，我也会朝着这个目标继续努力。虽然我学的比较晚，但是我相信只要努力一定可以实现梦想，目标是5年后进入像百度这样的大公司，也算是小小的规划。最后希望大家都能实现自己的梦想，加油！
+		</div>
+	</div>
+</body>
+</html>
