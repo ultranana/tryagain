@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>模拟队列</title>
+	<style type="text/css">
+		.sp {
+			display: inline-block;
+			background: red;
+			
+			margin-right: 5px;
+			width: 10px;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" name="text" id="in" >
+	<input type="button" name="button1" value="左侧入" id="btn1">
+	<input type="button" name="button2" value="右侧入" id="btn2">
+	<input type="button" name="button3" value="左侧出" id="btn3">
+	<input type="button" name="button4" value="右侧出" id="btn4">
+	<input type="button" name="button4" value="排序" id="btn5">
+	<div id="out">
+		请输入一个数字
+	</div>
+	<script type="text/javascript">
+		var inputValue=document.getElementById("in");
+		var out=document.getElementById("out");
+		var btn1=document.getElementById("btn1");
+		var btn2=document.getElementById("btn2");
+		var btn3=document.getElementById("btn3");
+		var btn4=document.getElementById("btn4");
+		var arr=[];//arr数组存放输入的数字
+		//绑定点击事件
+		btn1.onclick=function(){
+			showHtml(1);
+		}
+		btn2.onclick=function(){
+			showHtml(2);
+		}
+		btn3.onclick=function(){
+			showHtml(3);
+		}
+		btn4.onclick=function(){
+			showHtml(4);
+		}
+		btn5.onclick=function(){
+			showHtml(5);
+		}
+		console.log(inputValue);
+		function putNum(index){
+			
+		}
+		//定义showHTML函数，参数1,2,3,4分别代表左近，右进，左出，右出
+		function showHtml(index){
+			if(isNaN(inputValue.value)){
+				alert("格式错误！请输入一个数字");
+				return ;
+			}
+			//判断输入数字是否在10-100之间
+			if(inputValue.value<=100&&inputValue.value>10){
+				switch(index){
+				case 1: arr.unshift(inputValue.value);
+						break;
+				case 2: arr.push(inputValue.value);
+						break;
+				case 3: arr.shift();
+						break;
+				case 4: arr.pop();
+						break;
+				case 5: arr.sort(function(a,b){return a-b;});
+						break;
+				}
+				//判断队列元素数量是否超过最多限制60个
+				if(arr.length>60){
+					alert("输入元素数量大于60个！");
+					return;
+				}
+				//newarray数组存放html格式的内容
+				var newarray=[];
+				for(var i=0;i<arr.length;i++){
+					var newitem='<span class="sp" style="height:'+arr[i]+'px"></span>';
+					newarray.push(newitem);
+				}
+				out.innerHTML=newarray.join("");
+			} else {
+				alert("数字不在10-100之间");
+			}
+			
+		}
+		function swap(n,m,arr){
+			var temp=arr[n];
+			arr[n]=arr[m];
+			arr[m]=temp;
+			return arr;
+		}
+	</script>
+</body>
+</html>
+
