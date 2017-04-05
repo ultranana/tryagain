@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>模拟队列</title>
+	<style type="text/css">
+		.sp {
+			background: red;
+			color: #fff;
+			margin-right: 5px;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		span.search {
+			background: yellow !important;			
+		}
+	</style>
+</head>
+<body>
+	<textarea id="in"></textarea><br>
+	<input type="button" name="button1" value="左侧入" id="btn1">
+	<input type="button" name="button2" value="右侧入" id="btn2">
+	<input type="button" name="button3" value="左侧出" id="btn3">
+	<input type="button" name="button4" value="右侧出" id="btn4"><br>
+	<input type="text" name="searchtxt" id="sch">
+	<input type="button" name="button4" value="查询" id="btn5">
+	<div id="out">
+		
+	</div>
+	<script type="text/javascript">
+		var inputValue=document.getElementById("in");
+		var out=document.getElementById("out");
+		var btn1=document.getElementById("btn1");
+		var btn2=document.getElementById("btn2");
+		var btn3=document.getElementById("btn3");
+		var btn4=document.getElementById("btn4");
+		var searchtxt=document.getElementById("sch");
+		var btn5=document.getElementById("btn5");
+		var arr=[];
+
+		btn1.onclick=function(){
+			showHtml(1);
+		}
+		btn2.onclick=function(){
+			showHtml(2);
+		}
+		btn3.onclick=function(){
+			showHtml(3);
+		}
+		btn4.onclick=function(){
+			showHtml(4);
+		}
+		btn5.onclick=function(){
+			mysearch();
+		}
+
+		function mysearch(){
+			var searchreg=new RegExp(searchtxt.value);
+				
+			for(var i=0;i<arr.length;i++){
+				if(searchreg.test(arr[i])){
+					var searchDom=document.getElementsByClassName("sp");
+					console.log(arr[i]);	
+					searchDom[i].className="sp search"
+				}
+			}
+		}
+		
+	
+		function showHtml(index){
+			//处理输入的字符串，
+			var myform=/[^\u4e00-\u9fa5A-Za-z0-9_]/g;//匹配空格，回车，逗号，顿号，空格等符号
+			//判断输入的是数组还是单个字符
+			if(myform.test(inputValue.value)){
+				//将输入的字符串分割
+				var inputarr=inputValue.value.split(myform);
+				//根据点击的按钮选择放入（取出）的方向
+				switch(index){
+				case 1: var temp1=inputarr.concat(arr);
+						arr=temp1;
+						break;
+				case 2: var temp2=arr.concat(inputarr);
+						arr=temp2;
+						break;
+				case 3: arr.shift();
+						break;
+				case 4: arr.pop();
+						break;
+
+				}
+			}else {
+				//如果是单个字符则按原先的方法放入
+				switch(index){
+				case 1: arr.unshift(inputValue.value);
+						break;
+				case 2: arr.push(inputValue.value);
+						break;
+				case 3: arr.shift();
+						break;
+				case 4: arr.pop();
+						break;
+				}
+			}
+		
+			var newarray=[];
+			for(var i=0;i<arr.length;i++){
+				var newitem='<span class="sp">'+arr[i]+'</span>';
+				newarray.push(newitem);
+			}
+			out.innerHTML=newarray.join("");
+		}
+
+	</script>
+</body>
+</html>
