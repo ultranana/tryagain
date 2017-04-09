@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tree</title>
+	<style type="text/css">
+		.a {
+			border: 1px solid #000;
+			width: 600px;
+			height: 200px;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			background: #fff;
+		}
+		.b,.c {
+			border: 1px solid #000;
+			width: 280px;
+			height: 180px;
+			background: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+		.d,.e,.f,.g{
+			border: 1px solid #000;
+			background: #fff;
+			width: 120px;
+			height: 160px;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+		.h,.i,.j,.k,.l,.m,.n,.o {
+			background: #fff;
+			border: 1px solid #000;
+			width: 40px;
+			height: 140px;
+		}
+	</style>
+</head>
+<body>
+<div class="a">
+ 	<div class="b">
+ 		<div class="d">
+ 			<div class="h"></div>
+ 			<div class="i"></div>
+ 		</div>
+ 		<div class="e">
+ 			<div class="j"></div>
+ 			<div class="k"></div>
+ 		</div>
+ 	</div>
+ 	<div class="c">
+ 		<div class="f">
+ 			<div class="l"></div>
+ 			<div class="m"></div>
+ 		</div>
+ 		<div class="g">
+ 			<div class="n"></div>
+ 			<div class="o"></div>
+ 		</div>
+ 	</div>
+</div>
+<button id="btn">前序遍历</button>
+<script type="text/javascript">
+
+window.onload = function() {
+	var data = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"];
+	//二叉树链表结构
+	function bTree(data,leftChild,rightChild){
+		this.data = data||null;
+		this.leftChild = leftChild||null;
+		this.rightChild = rightChild||null;
+	}
+	//获得顺序存储列表，DOM元素
+	function getdata(datalist){
+		var list = [];
+		for(var i = 0;i < datalist.length;i++){
+			var node = document.getElementsByClassName(datalist[i])[0];
+			list.push(node);
+		}
+		return list;
+	}
+	//根据存储列表创建二叉树
+	function createBtree(datalist){
+		var mytree = new bTree();
+		function setValue(node,value){
+			node.data = value;
+		}
+		function preSet(node,x,visit){
+			visit(node,datalist[x]);
+			if(datalist[2 * x + 1]){//递归创建
+				preSet(node.leftChild = new bTree(),2 * x + 1,visit);
+			}
+			if(datalist[2 * x + 2]){
+				preSet(node.rightChild = new bTree(),2 * x + 2,visit);
+			}
+		};
+		preSet(mytree,0,setValue);
+		return mytree;
+	}
+	//前序遍历
+	function preOrder(tree){
+		//将当前节点的背景颜色修改
+		tree.data.style.background = "red"
+		if(tree.leftChild){
+			a = function (){
+				preOrder(tree.leftChild);
+			}
+			var t1 = setTimeout("a()",2000);
+		}
+		if(tree.rightChild){
+			b = function (){
+				preOrder(tree.rightChild);
+			}
+			var t2 = setTimeout("b()",2000);
+		}
+	}
+	var domData = getdata(data);
+	var Binarytree = createBtree(domData);
+	preOrder(Binarytree);
+}
+	
+
+	
+
+	
+</script>
+</body>
+</html>
