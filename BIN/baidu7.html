@@ -62,11 +62,14 @@
  		</div>
  	</div>
 </div>
-<button id="btn">前序遍历</button>
+<button id="btn1">前序遍历</button>
+<button id="btn2">中序遍历</button>
+<button id="btn3">后序遍历</button>
 <script type="text/javascript">
 
 window.onload = function() {
 	var data = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"];
+	var btn = document.getElementById("btn");
 	//二叉树链表结构
 	function bTree(data,leftChild,rightChild){
 		this.data = data||null;
@@ -101,25 +104,73 @@ window.onload = function() {
 		return mytree;
 	}
 	//前序遍历
+	
 	function preOrder(tree){
-		//将当前节点的背景颜色修改
-		tree.data.style.background = "red"
+		list.push(tree.data);
 		if(tree.leftChild){
-			a = function (){
-				preOrder(tree.leftChild);
-			}
-			var t1 = setTimeout("a()",2000);
+			preOrder(tree.leftChild);
 		}
 		if(tree.rightChild){
-			b = function (){
-				preOrder(tree.rightChild);
-			}
-			var t2 = setTimeout("b()",2000);
+			preOrder(tree.rightChild);
 		}
+		return list;
+	}
+	//中序遍历
+	function midOrder(tree){	
+		if(tree.leftChild){
+			midOrder(tree.leftChild);
+		}
+		list.push(tree.data);
+		if(tree.rightChild){
+			midOrder(tree.rightChild);
+		}
+		return list;
+	}
+	//后续遍历
+	function rigOrder(tree){	
+		if(tree.leftChild){
+			rigOrder(tree.leftChild);
+		}
+		if(tree.rightChild){
+			rigOrder(tree.rightChild);
+		}
+		list.push(tree.data);
+		return list;
+		
+	}
+	function show(arr){
+		var i = 0;
+		var timer = setInterval(function(){
+			if(i < arr.length){
+				var k=arr[i];
+				k.style.background = "red";
+				setTimeout(function(){
+					k.style.background = "#fff";		
+				},500);
+				i++;			
+			}else {
+				clearInterval(timer);
+			}	
+		},500);
 	}
 	var domData = getdata(data);
 	var Binarytree = createBtree(domData);
-	preOrder(Binarytree);
+	
+	btn1.onclick = function(){
+		list = [];
+		var prelist = preOrder(Binarytree);
+		show(prelist);
+	};
+	btn2.onclick = function(){
+		list = [];
+		var midlist = midOrder(Binarytree);
+		show(midlist);
+	};
+	btn3.onclick = function(){
+		list = [];
+		var riglist = rigOrder(Binarytree);
+		show(riglist);
+	};
 }
 	
 
