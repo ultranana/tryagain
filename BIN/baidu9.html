@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>二叉树一</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#root{
+			height: 200px;
+			width: 1100px;
+			border: 1px solid #000;
+			background: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;			
+		}
+		.box{
+			height: 90%;
+			border: 1px solid #000;
+			background: #fff;
+			margin: 0 5px;
+			display: flex;
+            justify-content: space-around;
+            align-items: center;   
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="root">
+		Super
+ 		<div class="box">
+ 			Car
+	 		<div class="box">
+	 			Apple
+	 			<div class="box">Pear</div>
+	 			<div class="box">Pig</div>
+	 			<div class="box">Cola</div>
+	 			<div class="box">Scoccor</div>
+	 		</div>
+	 		<div class="box">
+	 			Phone
+	 		</div>
+	 		<div class="box">
+	 			<div class="box">Book</div>
+	 			<div class="box">School</div>
+	 		</div>
+ 		</div>
+	 	<div class="box">
+	 		Note
+	 		<div class="box">
+	 			Human
+	 			<div class="box">Code</div>
+	 			<div class="box">Operate</div>
+	 			<div class="box">Man</div>
+	 		</div>
+	 		<div class="box">
+	 			<div class="box">Element<div class="box">Cot</div></div>
+	 			<div class="box">Goss</div>
+	 		</div>
+	 	</div>
+	 	<div class="box">Fish</div>
+	</div>
+<button id="btn1">前序遍历</button>
+<input type="text" name="search" id="search"><button id="btn2">查询</button>
+<button id="btn3">删除</button>
+<input type="text" name="addtext" id="addtext"><button id="btn4">添加</button>
+</body>
+<script>
+
+//前序
+	function DLR(node){
+		if(node!==null){
+			arr.push(node);
+			for(var i = 0;i < node.children.length;i++){
+				DLR(node.children[i]);
+			}
+			
+		}
+	}
+
+
+//遍历数组改变背景
+function show(){
+	setbgWhite();
+	var i=0;
+	var timer=setInterval(function(){
+		if(i<arr.length){
+			var ele=arr[i];
+			ele.style.background='red';
+			setTimeout(function() {
+				ele.style.background='#FFF';
+			}, 400);
+			i++;
+		}else{
+			clearInterval(timer);
+		}
+	},500);
+}
+//遍历时标出与查询字段相符的节点
+function show2(){
+	setbgWhite();
+	var i=0;
+	var value = document.getElementById("search").value;
+	var timer=setInterval(function(){
+		if(i<arr.length){
+			var ele=arr[i];
+			var html = ele.innerHTML.match(/\w+/);
+			ele.style.background='red';
+			setTimeout(function() {
+				ele.style.background='#fff';
+				if(value == html){
+					ele.style.background = "yellow";
+				}	
+			}, 400);
+			i++;
+		}else{
+			clearInterval(timer);
+		}
+	},500);	
+}
+//将背景重置为白色
+function setbgWhite(){
+	for(var i = 0;i < arr.length;i++){
+		arr[i].style.background = "#fff";
+	}
+}
+
+
+	var arr=new Array();//存储遍历的节点
+	var myroot=document.getElementById("root");
+	var btn1 = document.getElementById("btn1");
+	var btn2 = document.getElementById("btn2");
+	var btn3 = document.getElementById("btn3");
+	var btn4 = document.getElementById("btn4");
+	var btn4 = document.getElementById("btn4");
+	//选择节点
+	var chosen = [];//存储点击的节点
+	var divs = document.getElementsByTagName("div");
+	for(var j = 0;j < divs.length;j++){
+		divs[j].addEventListener('click', function(e){
+
+			if(this.style.background == "blue"){
+				this.style.background = "#fff";
+        		chosen.splice(chosen.indexOf(this),1);
+        	}else{
+        		this.style.background = "blue";
+        		chosen.push(this);
+        	}
+        	e.stopPropagation();
+        });
+	}
+
+	//删除节点
+	function deleteNodes(){
+		for(var i = 0;i < chosen.length;i++){
+			chosen[i].parentNode.removeChild(chosen[i]);
+		}
+	}
+	//添加节点
+	function addNode(){
+		var addtext = document.getElementById("addtext").value;
+		var newdiv = document.createElement("div");
+		var newtext = document.createTextNode(addtext);
+		newdiv.className = "box";
+		newdiv.appendChild(newtext);
+		for(var i = 0;i < chosen.length;i++){
+			chosen[i].appendChild(newdiv);
+		}
+	}
+
+	btn1.onclick = function(){
+		arr = [];
+		DLR(myroot);
+		show();
+	};
+	btn2.onclick = function(){
+		arr = [];
+		DLR(myroot);
+		show2();
+	};
+	btn3.onclick = function(){
+		deleteNodes();
+		chosen = [];
+	}
+	btn4.onclick = function(){
+		addNode();
+		chosen = [];
+	}
+
+</script>
+</html>
