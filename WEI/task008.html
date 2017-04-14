@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>响应式网格（栅格化）布局</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+       <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+       <style type="text/css">
+          .row [class*="col-"]{
+            text-align: center;  
+            padding-left: 20px;  
+            padding-right: 0; 
+          }
+          .row{
+             margin-left: -20px;
+            margin-right: -20px; 
+          }
+          .yo {
+            background: #eee;
+            border: 1px solid #999;
+            line-height: 50px;
+            min-height: 50px;
+          }
+       </style>
+   </head>
+   <body>
+   <div class="container">
+       <div class="row">
+        <div class="col-xs-6 col-sm-4">
+        <div class="yo">1</div>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+           <div class="yo">2</div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+           <div class="yo">3</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3 col-sm-3">
+            <div class="yo">4</div>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+           <div class="yo">5</div>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+           <div class="yo">6</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-sm-1">
+           <div class="yo">7</div>
+        </div>
+        <div class="col-xs-2 col-sm-1">
+           <div class="yo">8</div>
+        </div>
+        <div class="col-xs-8 col-sm-2">
+           <div class="yo">9</div>
+        </div>
+        <div class="col-xs-3 col-sm-2">
+           <div class="yo">10</div>
+        </div>
+        <div class="col-xs-3 col-sm-6">
+           <div class="yo">11</div>
+        </div>
+      </div>
+   </div>
+     
+      <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </body>
+</html>
