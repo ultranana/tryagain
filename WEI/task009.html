@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>使用HTML/CSS实现一个复杂页面</title>
+	<link rel="stylesheet" type="text/css" href="test38_复杂页面.css">
+</head>
+<body class="index">
+<header>
+	<div class="header_container">
+		<div class="logo">
+			<a href="#" class="logo_brand"></a>
+		</div>
+		<div class="header_right">
+			<div class="search">
+				<span class="icon-user"></span><input type="text" name="search" class="search_bar">
+			</div>
+			<div class="head_icon"><span class="icon-user"></span></div>
+			<div class="signin_txt">登陆</div>
+		</div>
+	</div>
+</header>
+<div class="main">
+	<div class="main_content">
+		<div class="content_nav">
+			<span>
+				<a href="#">C站</a>/<a href="#">个人报表</a>/<a href="#">文件一</a>/<a href="#" class="selected">文档一</a>
+			</span>
+		</div>
+		<div class="content_container">
+			<div class="content_1 clearfix">
+				<div class="search_item">
+					<span class="search_txt">查询项</span>
+					<select class="search_select">
+						<option value="one">第一项</option>
+						<option value="two">第二项</option>
+					</select>
+				</div>
+				<div class="bussiness">
+					<div class="bussiness_con">
+						<div class="buyer">
+							<span class="buyer_txt">买方</span>
+							<select class="buyer_select">
+								<option value="a">小A</option>
+								<option value="b">小B</option>
+							</select>
+						</div>
+						<div class="saler">
+							<span class="saler_txt">卖方</span>
+							<select class="saler_select">
+								<option value="c">小C</option>
+								<option value="d">小D</option>
+							</select>
+						</div>
+					</div>
+					<div class="change">
+						<span class="icon-user"></span>
+						<a href="#" class="change_btn">换</a>
+					</div>
+				</div>
+				<div class="others">
+					<div class="date">
+						<span class="date_txt">日期</span>
+						<input class="date_select" type="date" name="date" value="2016-04-01">
+					</div>
+					<div class="time">
+						<span class="time_txt">总耗时</span>
+						<select class="time_select">
+							<option value="8days">8天</option>
+							<option value="9days">9天</option>
+						</select>
+					</div>
+					<div class="people">
+						<span class="people_txt">人数</span>
+						<select class="people_select">
+							<option value="10people">10人</option>
+							<option value="11people">11人</option>
+						</select>
+					</div>
+					<div class="item">
+						<span class="item_txt">成交项</span>
+						<select class="item_select">
+							<option value="10items">10项</option>
+							<option value="11items">11人</option>
+						</select>
+					</div>
+				</div>
+				<div class="search_btn">
+					<input class="search_btn_select" type="submit" name="search" value="搜索">
+				</div>
+			</div>
+			<div class="content_2">
+				<div class="slider">
+					<div class="slider_btn_left"><</div>
+					<div class="slider_con active">
+						<div class="slider_con_top">10:00 am</div>
+						<div class="slider_con_price"><span class="format">$</span>1200</div>
+					</div>
+					<div class="slider_con">
+						<div class="slider_con_top">11:00 am</div>
+						<div class="slider_con_price"><span class="format">$</span>1300</div>
+					</div>
+					<div class="slider_con">
+						<div class="slider_con_top">12:00 am</div>
+						<div class="slider_con_price"><span class="format">$</span>1400</div>
+					</div>
+					<div class="slider_con">
+						<div class="slider_con_top">13:00 am</div>
+						<div class="slider_con_price"><span class="format">$</span>1500</div>
+					</div>
+					<div class="slider_con">
+						<div class="slider_con_top">14:00 am</div>
+						<div class="slider_con_price"><span class="format">$</span>1600</div>
+					</div>
+					<div class="slider_con">
+						<div class="slider_con_top">15:00 am</div>
+						<div class="slider_con_price"><span class="format">$</span>1700</div>
+					</div>
+					<div class="slider_btn_right">></div>
+				</div>
+				<div class="history">
+					<span class="icon-user"></span>
+					<span class="history_search">历史查询</span>
+				</div>
+			</div>
+			<div class="content_3">
+				<div class="content_3_top">2016年4月份统计</div>
+				<div class="statistics">
+					<div class="statistic_container">
+						<div class="statistic_item statistic_1">
+							<div class="statistic_txt">
+								<div class="numbers">133311</div>
+								<div class="volume">成交量</div>
+							</div>
+							<div class="color1"></div>
+						</div>
+						<div class="statistic_item statistic_2">
+							<div class="statistic_txt">
+								<div class="numbers">133311</div>
+								<div class="volume">成交量</div>
+							</div>
+							<div class="color2"></div>
+						</div>
+						<div class="statistic_item statistic_3">
+							<div class="statistic_txt">
+								<div class="numbers">133311</div>
+								<div class="volume">成交量</div>
+							</div>
+							<div class="color3"></div>
+						</div>
+						<div class="statistic_item statistic_4">
+							<div class="statistic_txt">
+								<div class="numbers">133311</div>
+								<div class="volume">成交量</div>
+							</div>
+							<div class="color4"></div>
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="content_4">
+				<div class="project1">
+					<div class="project1_top">第一组项目</div>
+					<div class="project1_con">
+						<div class="table_head">
+							<a href="#" class="table_head1 table_selected">项目一</a>
+							<a href="#" class="table_head2">项目二</a>
+							<a href="#" class="table_head3">项目三</a>
+							<a href="#" class="table_head4">项目四</a>
+							<a href="#" class="table_head5">项目五</a>
+						</div>
+						<div class="table_con">
+							<table>
+								<tr>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+								</tr>
+								<tr>
+									<td>购买材料二</td>
+									<td>购买材料二</td>
+									<td>购买材料二</td>
+									<td>购买材料二</td>
+								</tr>
+								<tr>
+									<td>购买材料十三</td>
+									<td>购买材料十三</td>
+									<td>购买材料十三</td>
+									<td>购买材料十三</td>
+								</tr>
+								<tr>
+									<td>购买材料四</td>
+									<td>购买材料四</td>
+									<td>购买材料四</td>
+									<td>购买材料四</td>
+								</tr>
+								<tr>
+									<td>购买材料四</td>
+									<td>购买材料四</td>
+									<td>购买材料四</td>
+									<td>购买材料四</td>
+								</tr>
+							</table>
+						</div>			
+					</div>	
+				</div>
+				<div class="project2">
+					<div class="project2_top">第二组项目</div>
+					<div class="project2_con">
+						<div class="project2_con_head">
+							<div class="project2_head">
+								<div class="project2_head1">标题</div>
+								<div class="project2_head2">项目报表三</div>
+							</div>
+							<div class="project2_intro">
+								<div class="project2_price">
+									<div class="project2_price_title">价格</div>
+									<div class="project2_price_num">$158</div>
+								</div>
+								<div class="project2_manager">
+									<div class="project2_price_title">负责人</div>
+									<div class="project2_price_num">小A</div>
+								</div>
+							</div>
+						</div>
+						<div class="project2_con_details">
+							<div class="project2_details_title">详细描述</div>
+							<div class="project2_details_txt">该项目目前负责人是。。。</div>
+						</div>
+						<div class="project2_con_searchfor">
+							<div class="check">
+								<input type="checkbox" name="check"><span class="check_txt">遵守保密协议</span>
+							</div>
+							<div class="submit">
+								<input type="submit" name="submit" class="submit_btn" value="搜索">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content_5">
+				<div class="project3">
+					<div class="project3_top">第二组项目</div>
+					<div class="project3_con">
+						<div class="project3_con_head">
+							<select>
+								<option value="16">2016年</option>
+								<option value="17">2017年</option>
+							</select>
+							<select>
+								<option value="4">4月</option>
+								<option value="5">5月</option>
+							</select>
+							<select>
+								<option value="">标注日期</option>
+								<option value="">5月</option>
+							</select>
+							<input class="today" type="submit" name="submit" value="返回今天">
+						</div>
+						<div class="project3_con_dates">
+							<div class="project2_dates_top">
+								<span class="one">一</span>
+								<span class="two">二</span>
+								<span class="three">三</span>
+								<span class="four">四</span>
+								<span class="five">五</span>
+								<span class="six">六</span>
+								<span class="seven">七</span>
+							</div>
+							<div class="project2_dates_txt">
+								<div class="date_item"></div>
+								<div class="date_item"></div>
+								<div class="date_item"></div>
+								<div class="date_item"></div>
+								<div class="date_item">
+									<div class="date_num marked">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item item_marked">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">1</div>
+									<div class="date_des">余人接</div>
+								</div>
+								<div class="date_item">
+									<div class="date_num">2</div>
+									<div class="date_des">感悟</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="project4">
+					<div class="project4_top">第一组项目</div>
+					<div class="project4_con">
+						<div class="table_con">
+							<table>
+								<tr>
+									<th>排名</td>
+									<th>品牌</th>
+									<th>搜索指数</th>		
+								</tr>
+								<tr class="table_tr">
+									<td>1</td>
+									<td>打中</td>
+									<td>236274627<span class="liner"><span class="liner_bar"></span></span></td>
+				
+								</tr>
+								<tr class="table_tr">
+									<td>1</td>
+									<td>打中</td>
+									<td>236274627<span class="liner"><span class="liner_bar"></span></span></td>
+								</tr>
+								<tr class="table_tr">
+									<td>1</td>
+									<td>打中</td>
+									<td>236274627<span class="liner"><span class="liner_bar"></span></span></td>
+								</tr>
+								<tr class="table_tr">
+									<td>1</td>
+									<td>打中</td>
+									<td>236274627<span class="liner"><span class="liner_bar"></span></span></td>
+								</tr>
+							</table>
+						</div>			
+					</div>	
+				</div>
+			</div>
+		</div>	
+		<aside>
+		<div class="aside_head">
+			<div class="user_avatar">
+				<div class="avatar_pic">
+					<img src="images/1.jpg">
+				</div>
+			</div>
+			<div class="user_name">ABC123</div>
+		</div>
+		<div class="aside_record">
+			<div class="collects">
+				110<br>收藏
+			</div>
+			<span class="liner"></span>
+			<div class="fans">
+				313<br>粉丝
+			</div>
+		</div>
+		<div class="aside_list">
+			<ul>
+				<li class="selected">
+					<a href="#" class="list_item">
+						<span class="icon-user"></span>
+						<span class="list_title">个人报表</span>
+					</a>
+					<ol class="dropdown1">
+						<li>
+							<a href="#" class="drop1_item">
+								<span class="icon-user"></span><span class="icon-user"></span><span class="list_title">文件一</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="drop1_item selected">
+								<span class="icon-user"></span><span class="icon-user"></span><span class="list_title">文件二</span>
+							</a>
+							<ol class="dropdown2">
+								<li>
+									<a href="#" class="drop2_item selected">
+										<span class="icon-user"></span><span class="list_title">文档一</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="drop2_item">
+										<span class="icon-user"></span><span class="list_title">文档二</span>
+									</a>
+								</li>
+							</ol>
+						</li>
+						<li>
+							<a href="#" class="drop1_item">
+								<span class="icon-user"></span><span class="icon-user"></span><span class="list_title">文件三</span>
+							</a>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<a href="#" class="list_item">
+						<span class="icon-user"></span>
+						<span class="list_title">个人收藏</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="list_item">
+						<span class="icon-user"></span>
+						<span class="list_title">我的分享</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="list_item">
+						<span class="icon-user"></span>
+						<span class="list_title">图库</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="list_item">
+						<span class="icon-user"></span>
+						<span class="list_title">成长记录</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="list_item">
+						<span class="icon-user"></span>
+						<span class="list_title">账户信息</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</aside>
+	</div>
+</div>
+</body>
+</html>
